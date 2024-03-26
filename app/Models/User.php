@@ -3,11 +3,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property string $ulid
+ * @property string $name
+ * @property-write string $password
+ * @property-read Carbon $created_at
+ * @property-read Carbon $updated_at
+ */
 class User extends Authenticatable
 {
     use HasFactory;
