@@ -1,0 +1,606 @@
+[
+    {
+        "id": 1,
+        "name": "System Administrators",
+        "guard_name": "web",
+        "permissions": [
+            {
+                "id": 1,
+                "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@view",
+                "shortname": "Core - Log Detail",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 1
+                }
+            },
+            {
+                "id": 2,
+                "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@create",
+                "shortname": "Core - Log Detail",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 2
+                }
+            },
+            {
+                "id": 3,
+                "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@update",
+                "shortname": "Core - Log Detail",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 3
+                }
+            },
+            {
+                "id": 4,
+                "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@delete",
+                "shortname": "Core - Log Detail",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 4
+                }
+            },
+            {
+                "id": 5,
+                "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@view",
+                "shortname": "RBAC - Side Menu",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 5
+                }
+            },
+            {
+                "id": 6,
+                "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@create",
+                "shortname": "RBAC - Side Menu",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 6
+                }
+            },
+            {
+                "id": 7,
+                "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@update",
+                "shortname": "RBAC - Side Menu",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 7
+                }
+            },
+            {
+                "id": 8,
+                "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@delete",
+                "shortname": "RBAC - Side Menu",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 8
+                }
+            },
+            {
+                "id": 9,
+                "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@view",
+                "shortname": "Settings - Site Config",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 9
+                }
+            },
+            {
+                "id": 10,
+                "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@create",
+                "shortname": "Settings - Site Config",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 10
+                }
+            },
+            {
+                "id": 11,
+                "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@update",
+                "shortname": "Settings - Site Config",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 11
+                }
+            },
+            {
+                "id": 12,
+                "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@delete",
+                "shortname": "Settings - Site Config",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 12
+                }
+            },
+            {
+                "id": 13,
+                "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@view",
+                "shortname": "RBAC - Permissions",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 13
+                }
+            },
+            {
+                "id": 14,
+                "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@create",
+                "shortname": "RBAC - Permissions",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 14
+                }
+            },
+            {
+                "id": 15,
+                "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@update",
+                "shortname": "RBAC - Permissions",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 15
+                }
+            },
+            {
+                "id": 16,
+                "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@delete",
+                "shortname": "RBAC - Permissions",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 16
+                }
+            },
+            {
+                "id": 17,
+                "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@view",
+                "shortname": "RBAC - Roles",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 17
+                }
+            },
+            {
+                "id": 18,
+                "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@create",
+                "shortname": "RBAC - Roles",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 18
+                }
+            },
+            {
+                "id": 19,
+                "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@update",
+                "shortname": "RBAC - Roles",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 19
+                }
+            },
+            {
+                "id": 20,
+                "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@delete",
+                "shortname": "RBAC - Roles",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 20
+                }
+            },
+            {
+                "id": 21,
+                "name": "App\\Http\\Controllers\\Extend\\ElfinderController@view",
+                "shortname": "Core - File Manager",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 21
+                }
+            },
+            {
+                "id": 22,
+                "name": "App\\Http\\Controllers\\Extend\\ElfinderController@create",
+                "shortname": "Core - File Manager",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 22
+                }
+            },
+            {
+                "id": 23,
+                "name": "App\\Http\\Controllers\\Extend\\ElfinderController@update",
+                "shortname": "Core - File Manager",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 23
+                }
+            },
+            {
+                "id": 24,
+                "name": "App\\Http\\Controllers\\Extend\\ElfinderController@delete",
+                "shortname": "Core - File Manager",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 24
+                }
+            },
+            {
+                "id": 25,
+                "name": "App\\Http\\Controllers\\Extend\\BackupController@view",
+                "shortname": "Core - Backups",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 25
+                }
+            },
+            {
+                "id": 26,
+                "name": "App\\Http\\Controllers\\Extend\\BackupController@create",
+                "shortname": "Core - Backups",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 26
+                }
+            },
+            {
+                "id": 27,
+                "name": "App\\Http\\Controllers\\Extend\\BackupController@update",
+                "shortname": "Core - Backups",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 27
+                }
+            },
+            {
+                "id": 28,
+                "name": "App\\Http\\Controllers\\Extend\\BackupController@delete",
+                "shortname": "Core - Backups",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 28
+                }
+            },
+            {
+                "id": 29,
+                "name": "App\\Http\\Controllers\\Extend\\UserCrudController@create",
+                "shortname": "RBAC - Users",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 29
+                }
+            },
+            {
+                "id": 30,
+                "name": "App\\Http\\Controllers\\Extend\\UserCrudController@view",
+                "shortname": "RBAC - Users",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 30
+                }
+            },
+            {
+                "id": 31,
+                "name": "App\\Http\\Controllers\\Extend\\UserCrudController@update",
+                "shortname": "RBAC - Users",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 31
+                }
+            },
+            {
+                "id": 32,
+                "name": "App\\Http\\Controllers\\Extend\\UserCrudController@delete",
+                "shortname": "RBAC - Users",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 32
+                }
+            },
+            {
+                "id": 35,
+                "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@view",
+                "shortname": "Core - Log Files",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 35
+                }
+            },
+            {
+                "id": 36,
+                "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@create",
+                "shortname": "Core - Log Files",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 36
+                }
+            },
+            {
+                "id": 37,
+                "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@update",
+                "shortname": "Core - Log Files",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 37
+                }
+            },
+            {
+                "id": 38,
+                "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@delete",
+                "shortname": "Core - Log Files",
+                "guard_name": "web",
+                "pivot": {
+                    "role_id": 1,
+                    "permission_id": 38
+                }
+            }
+        ],
+        "menuitems": [
+            {
+                "id": 1,
+                "name": "Settings",
+                "grouping": "Application Settings",
+                "type": "page_link",
+                "link": "#",
+                "page_id": null,
+                "parent_id": null,
+                "lft": 64,
+                "rgt": 77,
+                "depth": 1,
+                "icon": "la-cogs",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 1
+                }
+            },
+            {
+                "id": 2,
+                "name": "Users & Navigation",
+                "grouping": "RBAC",
+                "type": "internal_link",
+                "link": "#",
+                "page_id": null,
+                "parent_id": null,
+                "lft": 54,
+                "rgt": 63,
+                "depth": 1,
+                "icon": "la-navicon",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 2
+                }
+            },
+            {
+                "id": 3,
+                "name": "File Manager",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "elfinder",
+                "page_id": null,
+                "parent_id": 1,
+                "lft": 73,
+                "rgt": 74,
+                "depth": 2,
+                "icon": "lar la-file",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 3
+                }
+            },
+            {
+                "id": 4,
+                "name": "Backups",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "backup",
+                "page_id": null,
+                "parent_id": 1,
+                "lft": 71,
+                "rgt": 72,
+                "depth": 2,
+                "icon": "la-save",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 4
+                }
+            },
+            {
+                "id": 5,
+                "name": "Logging",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "#",
+                "page_id": null,
+                "parent_id": 1,
+                "lft": 65,
+                "rgt": 70,
+                "depth": 2,
+                "icon": "la-terminal",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 5
+                }
+            },
+            {
+                "id": 6,
+                "name": "Site Config",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "setting",
+                "page_id": null,
+                "parent_id": 1,
+                "lft": 75,
+                "rgt": 76,
+                "depth": 2,
+                "icon": "la-cog",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 6
+                }
+            },
+            {
+                "id": 7,
+                "name": "Navigation",
+                "grouping": "RBAC",
+                "type": "internal_link",
+                "link": "menu-item",
+                "page_id": null,
+                "parent_id": 2,
+                "lft": 59,
+                "rgt": 60,
+                "depth": 2,
+                "icon": "la-angle-double-right",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 7
+                }
+            },
+            {
+                "id": 8,
+                "name": "Permissions",
+                "grouping": "RBAC",
+                "type": "internal_link",
+                "link": "permission",
+                "page_id": null,
+                "parent_id": 2,
+                "lft": 61,
+                "rgt": 62,
+                "depth": 2,
+                "icon": "la-angle-double-right",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 8
+                }
+            },
+            {
+                "id": 9,
+                "name": "Roles",
+                "grouping": "RBAC",
+                "type": "internal_link",
+                "link": "role",
+                "page_id": null,
+                "parent_id": 2,
+                "lft": 57,
+                "rgt": 58,
+                "depth": 2,
+                "icon": "la-angle-double-right",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 9
+                }
+            },
+            {
+                "id": 10,
+                "name": "Users",
+                "grouping": "RBAC",
+                "type": "internal_link",
+                "link": "user",
+                "page_id": null,
+                "parent_id": 2,
+                "lft": 55,
+                "rgt": 56,
+                "depth": 2,
+                "icon": "la-angle-double-right",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 10
+                }
+            },
+            {
+                "id": 11,
+                "name": "Errors & Warnings",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "log",
+                "page_id": null,
+                "parent_id": 5,
+                "lft": 68,
+                "rgt": 69,
+                "depth": 3,
+                "icon": null,
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 11
+                }
+            },
+            {
+                "id": 12,
+                "name": "Activity Logs",
+                "grouping": "Application Settings",
+                "type": "internal_link",
+                "link": "logdetail",
+                "page_id": null,
+                "parent_id": 5,
+                "lft": 66,
+                "rgt": 67,
+                "depth": 3,
+                "icon": "",
+                "admin_route": 1,
+                "deleted_at": null,
+                "pivot": {
+                    "role_id": 1,
+                    "menu_item_id": 12
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "User",
+        "guard_name": "web",
+        "permissions": [],
+        "menuitems": []
+    }
+]

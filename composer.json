@@ -6,10 +6,25 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "backpack/activity-log": "^2.0",
+        "backpack/backupmanager": "^5.0",
+        "backpack/crud": "^6.7",
+        "backpack/filemanager": "^3.0",
+        "backpack/logmanager": "^5.0",
+        "backpack/permissionmanager": "^7.2",
+        "backpack/pro": "^2.1",
+        "backpack/settings": "^3.1",
+        "backpack/theme-coreuiv4": "^1.1",
+        "backpack/theme-tabler": "^1.2",
+        "genealabs/laravel-model-caching": "^11.0",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "spatie/laravel-activitylog": "*",
+        "spatie/laravel-permission": "^6.4"
     },
     "require-dev": {
+        "backpack/generators": "^4.0",
+        "barryvdh/laravel-debugbar": "^3.12",
         "barryvdh/laravel-ide-helper": "^3.0",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.9",
@@ -26,7 +41,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -36,7 +54,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan db:seed --class=IdeHelper"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -48,6 +67,9 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "post-install-cmd": [
+            "@php artisan storage:link --quiet"
         ]
     },
     "extra": {
@@ -67,5 +89,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "backpack": {
+            "type": "composer",
+            "url": "https://repo.backpackforlaravel.com/"
+        }
+    }
 }

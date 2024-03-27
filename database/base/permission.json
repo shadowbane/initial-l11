@@ -1,0 +1,218 @@
+[
+    {
+        "id": 1,
+        "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@view",
+        "shortname": "Core - Log Detail",
+        "guard_name": "web"
+    },
+    {
+        "id": 2,
+        "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@create",
+        "shortname": "Core - Log Detail",
+        "guard_name": "web"
+    },
+    {
+        "id": 3,
+        "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@update",
+        "shortname": "Core - Log Detail",
+        "guard_name": "web"
+    },
+    {
+        "id": 4,
+        "name": "App\\Http\\Controllers\\Admin\\LogDetailCrudController@delete",
+        "shortname": "Core - Log Detail",
+        "guard_name": "web"
+    },
+    {
+        "id": 5,
+        "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@view",
+        "shortname": "RBAC - Side Menu",
+        "guard_name": "web"
+    },
+    {
+        "id": 6,
+        "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@create",
+        "shortname": "RBAC - Side Menu",
+        "guard_name": "web"
+    },
+    {
+        "id": 7,
+        "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@update",
+        "shortname": "RBAC - Side Menu",
+        "guard_name": "web"
+    },
+    {
+        "id": 8,
+        "name": "App\\Http\\Controllers\\Admin\\MenuItemCrudController@delete",
+        "shortname": "RBAC - Side Menu",
+        "guard_name": "web"
+    },
+    {
+        "id": 9,
+        "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@view",
+        "shortname": "Settings - Site Config",
+        "guard_name": "web"
+    },
+    {
+        "id": 10,
+        "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@create",
+        "shortname": "Settings - Site Config",
+        "guard_name": "web"
+    },
+    {
+        "id": 11,
+        "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@update",
+        "shortname": "Settings - Site Config",
+        "guard_name": "web"
+    },
+    {
+        "id": 12,
+        "name": "App\\Http\\Controllers\\Admin\\SettingCrudController@delete",
+        "shortname": "Settings - Site Config",
+        "guard_name": "web"
+    },
+    {
+        "id": 13,
+        "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@view",
+        "shortname": "RBAC - Permissions",
+        "guard_name": "web"
+    },
+    {
+        "id": 14,
+        "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@create",
+        "shortname": "RBAC - Permissions",
+        "guard_name": "web"
+    },
+    {
+        "id": 15,
+        "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@update",
+        "shortname": "RBAC - Permissions",
+        "guard_name": "web"
+    },
+    {
+        "id": 16,
+        "name": "App\\Http\\Controllers\\Extend\\PermissionCrudController@delete",
+        "shortname": "RBAC - Permissions",
+        "guard_name": "web"
+    },
+    {
+        "id": 17,
+        "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@view",
+        "shortname": "RBAC - Roles",
+        "guard_name": "web"
+    },
+    {
+        "id": 18,
+        "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@create",
+        "shortname": "RBAC - Roles",
+        "guard_name": "web"
+    },
+    {
+        "id": 19,
+        "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@update",
+        "shortname": "RBAC - Roles",
+        "guard_name": "web"
+    },
+    {
+        "id": 20,
+        "name": "App\\Http\\Controllers\\Extend\\RoleCrudController@delete",
+        "shortname": "RBAC - Roles",
+        "guard_name": "web"
+    },
+    {
+        "id": 21,
+        "name": "App\\Http\\Controllers\\Extend\\ElfinderController@view",
+        "shortname": "Core - File Manager",
+        "guard_name": "web"
+    },
+    {
+        "id": 22,
+        "name": "App\\Http\\Controllers\\Extend\\ElfinderController@create",
+        "shortname": "Core - File Manager",
+        "guard_name": "web"
+    },
+    {
+        "id": 23,
+        "name": "App\\Http\\Controllers\\Extend\\ElfinderController@update",
+        "shortname": "Core - File Manager",
+        "guard_name": "web"
+    },
+    {
+        "id": 24,
+        "name": "App\\Http\\Controllers\\Extend\\ElfinderController@delete",
+        "shortname": "Core - File Manager",
+        "guard_name": "web"
+    },
+    {
+        "id": 25,
+        "name": "App\\Http\\Controllers\\Extend\\BackupController@view",
+        "shortname": "Core - Backups",
+        "guard_name": "web"
+    },
+    {
+        "id": 26,
+        "name": "App\\Http\\Controllers\\Extend\\BackupController@create",
+        "shortname": "Core - Backups",
+        "guard_name": "web"
+    },
+    {
+        "id": 27,
+        "name": "App\\Http\\Controllers\\Extend\\BackupController@update",
+        "shortname": "Core - Backups",
+        "guard_name": "web"
+    },
+    {
+        "id": 28,
+        "name": "App\\Http\\Controllers\\Extend\\BackupController@delete",
+        "shortname": "Core - Backups",
+        "guard_name": "web"
+    },
+    {
+        "id": 29,
+        "name": "App\\Http\\Controllers\\Extend\\UserCrudController@create",
+        "shortname": "RBAC - Users",
+        "guard_name": "web"
+    },
+    {
+        "id": 30,
+        "name": "App\\Http\\Controllers\\Extend\\UserCrudController@view",
+        "shortname": "RBAC - Users",
+        "guard_name": "web"
+    },
+    {
+        "id": 31,
+        "name": "App\\Http\\Controllers\\Extend\\UserCrudController@update",
+        "shortname": "RBAC - Users",
+        "guard_name": "web"
+    },
+    {
+        "id": 32,
+        "name": "App\\Http\\Controllers\\Extend\\UserCrudController@delete",
+        "shortname": "RBAC - Users",
+        "guard_name": "web"
+    },
+    {
+        "id": 35,
+        "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@view",
+        "shortname": "Core - Log Files",
+        "guard_name": "web"
+    },
+    {
+        "id": 36,
+        "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@create",
+        "shortname": "Core - Log Files",
+        "guard_name": "web"
+    },
+    {
+        "id": 37,
+        "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@update",
+        "shortname": "Core - Log Files",
+        "guard_name": "web"
+    },
+    {
+        "id": 38,
+        "name": "Backpack\\LogManager\\app\\Http\\Controllers\\LogController@delete",
+        "shortname": "Core - Log Files",
+        "guard_name": "web"
+    }
+]

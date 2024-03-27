@@ -3,11 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Traits\CanImpersonateTrait;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @property string $ulid
@@ -18,9 +21,15 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
+    use CanImpersonateTrait;
+    use CrudTrait;
     use HasFactory;
+    use HasRoles;
     use HasUlids;
     use Notifiable;
+    use \Illuminate\Database\Eloquent\Concerns\HasTimestamps, \App\Models\Traits\CustomTimestampsTrait {
+        \App\Models\Traits\CustomTimestampsTrait::freshTimestamp insteadof \Illuminate\Database\Eloquent\Concerns\HasTimestamps;
+    }
 
     /**
      * The attributes that are mass assignable.
