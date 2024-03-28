@@ -80,7 +80,6 @@ class PermissionService
             'logout',
             'dashboard',
             'lang',
-            'semester',
             'stop-impersonating',
             'user-token',
             last(explode('/', config('app.url'))),
