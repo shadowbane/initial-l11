@@ -59,6 +59,7 @@ return [
             'restore' => 'update',
 
             'destroy' => 'delete',
+            'delete' => 'delete',
             'bulkDelete' => 'delete',
         ],
 
