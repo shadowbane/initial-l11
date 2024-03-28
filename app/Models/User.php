@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Casts\UTCDateTime;
 use App\Models\Traits\CanImpersonateTrait;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Carbon\Carbon;
@@ -42,6 +43,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'last_login_ip',
+        'last_login',
     ];
 
     /**
@@ -64,6 +67,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'last_login' => UTCDateTime::class,
+            'must_change_password' => 'boolean',
         ];
     }
 

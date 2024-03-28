@@ -333,3 +333,21 @@ if (! function_exists('backpack_users_have_email')) {
         });
     }
 }
+
+if (! function_exists('timestampFromUlid')) {
+    function timestampFromUlid(string $ulid): \Carbon\Carbon
+    {
+        $timestampPart = substr($ulid, 0, 10);
+
+        $binaryTimestamp = '';
+        for ($i = 0; $i < strlen($timestampPart); $i++) {
+            $decimal = strpos('0123456789ABCDEFGHJKMNPQRSTVWXYZ', strtoupper($timestampPart[$i]));
+            $binary = decbin($decimal);
+            $binaryTimestamp .= str_pad((string) $binary, 5, '0', STR_PAD_LEFT);
+        }
+
+        $timestamp = bindec($binaryTimestamp);
+
+        return \Carbon\Carbon::createFromTimestampMsUTC($timestamp);
+    }
+}

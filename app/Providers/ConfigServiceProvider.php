@@ -47,8 +47,9 @@ class ConfigServiceProvider extends ServiceProvider
 
             /** @var Setting $d */
             foreach ($data as $d) {
+                // Decrypt value, as we're not using Eloquent ORM here
                 $d->value = stringEncryption('decrypt', $d->value);
-                if (! empty($d->value)) {
+                if (! blank($d->value)) {
                     config([$d->key => $d->value]);
                 }
             }

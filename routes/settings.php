@@ -22,7 +22,8 @@ Route::crud('user', Extend\UserCrudController::class);
 Route::crud('menu-item', Admin\MenuItemCrudController::class);
 
 // log files
-Route::get('log', [\Backpack\LogManager\app\Http\Controllers\LogController::class, 'index'])->name('log.index');
+Route::get('log', [\Backpack\LogManager\app\Http\Controllers\LogController::class, 'index'])
+    ->name('log.index');
 Route::get('log/preview/{file_name}',
     [\Backpack\LogManager\app\Http\Controllers\LogController::class, 'preview'])->name('log.show');
 Route::get('log/download/{file_name}',

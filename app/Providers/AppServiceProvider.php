@@ -2,15 +2,17 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -51,6 +53,13 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
+        /** MACROS */
+
+        // add request identifier
+        Request::macro('identifier', function () {
+            return once(fn() => Str::ulid()->toBase32());
+        });
+
         // add paginate to collection
         if (! Collection::hasMacro('paginate')) {
             Collection::macro('paginate', function ($perPage = 15, $page = null, $options = []) {
@@ -75,5 +84,6 @@ class AppServiceProvider extends ServiceProvider
     private function overrideMiddlewares(): void
     {
         RedirectIfAuthenticated::redirectUsing(fn($request) => route('backpack.dashboard'));
+        Authenticate::redirectUsing(fn($request) => route('backpack.auth.login'));
     }
 }

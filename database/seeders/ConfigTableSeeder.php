@@ -36,10 +36,8 @@ class ConfigTableSeeder extends Seeder
                         'active' => $setting['active'],
                         'updated_at' => $setting['updated_at'],
                     ]);
-            } elseif (! Setting::create($setting)) {
-                $this->command->info("Insert failed at record $index.");
-
-                return;
+            } else {
+                Setting::create($setting);
             }
         }
     }
@@ -57,7 +55,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Log Web access / requests',
                 'description' => 'Log GET, POST, PUT, DELETE that requested by browser',
                 'value' => 1,
-                'field' => '{"name":"value","label":"Value","type":"checkbox"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Log Web access / requests',
+                    'type' => 'checkbox',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -67,7 +69,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Amazon S3 Access Key',
                 'description' => '',
                 'value' => '',
-                'field' => '{"name":"value","label":"Value","type":"text"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Amazon S3 Access Key',
+                    'type' => 'text',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -77,7 +83,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Amazon S3 Secret Key',
                 'description' => '',
                 'value' => '',
-                'field' => '{"name":"value","label":"Value","type":"text"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Amazon S3 Secret Key',
+                    'type' => 'text',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -87,7 +97,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Amazon S3 Region',
                 'description' => '',
                 'value' => '',
-                'field' => '{"name":"value","label":"Value","type":"text"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Amazon S3 Region',
+                    'type' => 'text',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -97,7 +111,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Amazon S3 Bucket Name',
                 'description' => '',
                 'value' => '',
-                'field' => '{"name":"value","label":"Value","type":"text"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Amazon S3 Bucket Name',
+                    'type' => 'text',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -107,7 +125,11 @@ class ConfigTableSeeder extends Seeder
                 'name' => 'Amazon S3 URL',
                 'description' => '',
                 'value' => '',
-                'field' => '{"name":"value","label":"Value","type":"text"}',
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Amazon S3 URL',
+                    'type' => 'text',
+                ],
                 'active' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),

@@ -2,36 +2,30 @@
 
 namespace App\Casts;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
 
-class StringEncryption implements CastsAttributes
+class UTCDateTime implements CastsAttributes
 {
     /**
      * Cast the given value.
      *
-     * @param  Model  $model
-     * @param  string  $key
-     * @param  mixed  $value
      * @param  array<string, mixed>  $attributes
-     * @return mixed
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return stringEncryption('decrypt', $value);
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value, 'UTC')
+            ->timezone(config('app.timezone'));
     }
 
     /**
      * Prepare the given value for storage.
      *
-     * @param  Model  $model
-     * @param  string  $key
-     * @param  mixed  $value
      * @param  array<string, mixed>  $attributes
-     * @return mixed
      */
     public function set(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return stringEncryption('encrypt', $value);
+        return now('UTC')->format('Y-m-d H:i:s');
     }
 }

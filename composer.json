@@ -17,6 +17,7 @@
         "backpack/theme-coreuiv4": "^1.1",
         "backpack/theme-tabler": "^1.2",
         "genealabs/laravel-model-caching": "^11.0",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "spatie/laravel-activitylog": "*",

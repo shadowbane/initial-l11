@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Exception;
+use Illuminate\Support\Facades\Log;
 use Jenssegers\Agent\Agent;
 use Spatie\Activitylog\Models\Activity as ac;
 
@@ -30,7 +30,15 @@ class Activity extends ac
                 $model->ip = request()->ip();
                 $model->browser_detail = self::getBrowserDetail();
                 $model->request_detail = self::getRequestData();
-            } catch (Exception $e) {
+                if (! app()->runningInConsole()) {
+                    $model->request_identifier = request()->identifier();
+                }
+            } catch (\Throwable $e) {
+                Log::error('Error when creating activity log: '.$e->getMessage(), [
+                    'exception' => $e,
+                    'previous' => $e->getPrevious(),
+                    'trace' => $e->getTrace(),
+                ]);
                 abort(500, $e->getMessage());
             }
         });
@@ -41,7 +49,7 @@ class Activity extends ac
      *
      * @return array
      */
-    private static function getRequestData()
+    private static function getRequestData(): array
     {
         $req['ajax'] = request()->ajax();
         $req['isJson'] = request()->isJson();
@@ -60,7 +68,7 @@ class Activity extends ac
      *
      * @return array
      */
-    private static function getBrowserDetail()
+    private static function getBrowserDetail(): array
     {
         $agent = new Agent();
 
@@ -79,15 +87,14 @@ class Activity extends ac
     }
 
     /**
-     * @return mixed|string|null
+     * @return string|null
      */
-    public function getCauser()
+    public function getCauser(): ?string
     {
         if ($this->causer instanceof User) {
             return $this->causer->name;
         }
 
         return null;
-
     }
 }

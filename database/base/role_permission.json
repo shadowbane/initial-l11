@@ -598,7 +598,7 @@
     },
     {
         "id": 2,
-        "name": "User",
+        "name": "Users",
         "guard_name": "web",
         "permissions": [],
         "menuitems": []

@@ -18,14 +18,17 @@ class Setting extends MS
 
     protected $casts = [
         'value' => StringEncryption::class,
+        'active' => 'boolean',
+        'field' => 'array',
     ];
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 
         static::updating(function ($model) {
-            Artisan::call('modelCache:clear', ['--model' => 'App\\Models\\Setting']);
+            cache()->clear();
+            Artisan::call('config:clear');
         });
     }
 }
