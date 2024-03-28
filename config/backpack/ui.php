@@ -46,7 +46,7 @@ return [
     // ----
 
     // Project name - shown in the window title
-    'project_name' => 'Backpack Admin Panel',
+    'project_name' => env('APP_NAME'),
 
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
@@ -115,6 +115,7 @@ return [
 
     // JS files that are loaded in all pages, using Laravel's asset() helper
     'scripts' => [
+        'build/assets/app.js',
         // 'js/example.js',
         // 'https://unpkg.com/vue@2.4.4/dist/vue.min.js',
         // 'https://unpkg.com/react@16/umd/react.production.min.js',

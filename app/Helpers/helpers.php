@@ -316,3 +316,20 @@ if (! function_exists('formatLetterNumber')) {
         return strtoupper(implode('/', $formats));
     }
 }
+
+if (! function_exists('backpack_users_have_email')) {
+    /**
+     * Check if the email column is present on the user table.
+     *
+     * @return bool
+     */
+    function backpack_users_have_email(): bool
+    {
+        return once(function () {
+            $user_model_fqn = config('backpack.base.user_model_fqn');
+            $user = new $user_model_fqn();
+
+            return \Schema::hasColumn($user->getTable(), config('backpack.base.email_column') ?? 'email');
+        });
+    }
+}

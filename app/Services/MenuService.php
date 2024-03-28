@@ -13,19 +13,29 @@ class MenuService
     /**
      * MenuService constructor.
      *
-     * @param  string  $cacheName
      * @param  int  $cacheLifetime
      */
     public function __construct(
-        public string $cacheName = '-menuTree',
         protected int $cacheLifetime = 3600,
     ) {
         $this->cacheTag = 'menuTree-'.config('cache.prefix');
-        $this->cacheName = (
+    }
+
+    /**
+     * Returns cache name.
+     * This cache is per-user basis, based on their ID.
+     *
+     * @return string
+     */
+    private function getCacheName(): string
+    {
+        $cachePrefix = '-menuTree';
+
+        return (
             auth()->guest()
                 ? 'guest'
                 : auth()->user()->getAuthIdentifier()
-        ).$this->cacheName;
+        ).$cachePrefix;
     }
 
     /**
@@ -34,13 +44,13 @@ class MenuService
      */
     public function tree(): Collection
     {
-        if (! cache()->tags([$this->cacheTag])->has($this->cacheName)) {
+        if (! cache()->tags([$this->cacheTag])->has($this->getCacheName())) {
             cache()
                 ->tags([$this->cacheTag])
-                ->put($this->cacheName, $this->getTree(), $this->cacheLifetime);
+                ->put($this->getCacheName(), $this->getTree(), $this->cacheLifetime);
         }
 
-        return cache()->tags([$this->cacheTag])->get($this->cacheName);
+        return cache()->tags([$this->cacheTag])->get($this->getCacheName());
     }
 
     /**
@@ -148,9 +158,9 @@ class MenuService
      * Get the records for given roles.
      *
      * @param  array  $roles
-     * @return array|Collection
+     * @return array
      */
-    private function runQuery(array $roles): array|Collection
+    private function runQuery(array $roles): array
     {
         return DB::connection('mysql')->select(
             $this->getQuery($roles)
@@ -175,7 +185,7 @@ class MenuService
      *
      * @return void
      */
-    public function deleteAllCache()
+    public function deleteAllCache(): void
     {
         cache()->tags([$this->cacheTag])->flush();
     }
@@ -185,9 +195,9 @@ class MenuService
      *
      * @return void
      */
-    public function deleteUserCache()
+    public function deleteUserCache(): void
     {
-        cache()->tags([$this->cacheTag])->forget($this->cacheName);
+        cache()->tags([$this->cacheTag])->forget($this->getCacheName());
     }
 
     /**
