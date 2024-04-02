@@ -54,7 +54,7 @@ class PermissionService
     private function checkMustChangePassword(): void
     {
         // must be logged in!
-        if (bacpack_auth()->user() && bacpack_auth()->user()->must_change_password) {
+        if (auth()->user() && auth()->user()->must_change_password) {
             abort(redirect()->route('auth.change_password'));
         }
     }
@@ -63,7 +63,6 @@ class PermissionService
      * Get absolute last path of the URL.
      *
      * @param  $request
-     *
      * @return mixed
      */
     private function getLastUrl($request): mixed
@@ -189,7 +188,6 @@ class PermissionService
      * Get the current action group from config array.
      *
      * @param  string  $method
-     *
      * @return string
      */
     private function getCurrentActionGroup(string $method): string
@@ -202,7 +200,6 @@ class PermissionService
      *
      * @param  string  $class
      * @param  string  $actionGroup
-     *
      * @return string
      */
     private function getPermision(string $class, string $actionGroup): string
