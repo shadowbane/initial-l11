@@ -16,7 +16,7 @@ class Permission extends \Spatie\Permission\Models\Permission
     protected $connection = 'mysql';
     protected $table = 'permissions';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'guard_name', 'shortname', 'description', 'updated_at', 'created_at'];
+    protected $fillable = ['name', 'guard_name', 'shortname', 'description'];
     protected $hidden = ['created_at', 'updated_at'];
 
     /*

@@ -2,8 +2,11 @@
 
 namespace App\Services;
 
+use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 
 class PermissionService
@@ -60,6 +63,7 @@ class PermissionService
      * Get absolute last path of the URL.
      *
      * @param  $request
+     *
      * @return mixed
      */
     private function getLastUrl($request): mixed
@@ -91,7 +95,7 @@ class PermissionService
      *
      * @return bool
      */
-    private function setuserMustChangePassword(): bool
+    private function setUserMustChangePassword(): bool
     {
         return auth()->user()->update([
             'must_change_password' => true,
@@ -114,6 +118,46 @@ class PermissionService
             });
 
             $this->createLoginActivityLog();
+        }
+    }
+
+    /**
+     * @param  string  $classString
+     * @param  string  $shortName
+     * @param  Collection  $roles
+     * @param  string  $guard
+     * @param  string|null  $description
+     *
+     * @throws \Throwable
+     *
+     * @return void
+     */
+    public function createPermission(
+        string $classString,
+        string $shortName,
+        Collection $roles,
+        string $guard = 'web',
+        ?string $description = null,
+    ): void {
+        if (count(config('system.system.controllers.valid_actions')) < 1) {
+            throw new \RuntimeException('No valid_actions set');
+        }
+
+        // Create permission
+        // Here, we append the $classString with valid action from config
+        foreach (config('system.system.controllers.valid_actions') as $action) {
+            $newPermission['name'] = "{$classString}@{$action}";
+            $newPermission['shortname'] = $shortName;
+            $newPermission['guard'] = $guard;
+            $newPermission['description'] = $description;
+
+            $permissions[] = Permission::create($newPermission);
+        }
+
+        // Loop role, and assign newly created permission
+        /** @var Role $role */
+        foreach ($roles as $role) {
+            $role->givePermissionTo($permissions);
         }
     }
 
@@ -141,11 +185,26 @@ class PermissionService
         return [$class, $method];
     }
 
+    /**
+     * Get the current action group from config array.
+     *
+     * @param  string  $method
+     *
+     * @return string
+     */
     private function getCurrentActionGroup(string $method): string
     {
         return config('system.system.controllers.action_groups.'.$method);
     }
 
+    /**
+     * Get the permission string from class and action group.
+     *
+     * @param  string  $class
+     * @param  string  $actionGroup
+     *
+     * @return string
+     */
     private function getPermision(string $class, string $actionGroup): string
     {
         return $class.'@'.$actionGroup;
