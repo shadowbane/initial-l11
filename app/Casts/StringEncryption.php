@@ -18,7 +18,17 @@ class StringEncryption implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return stringEncryption('decrypt', $value);
+        $decryptedValue = stringEncryption('decrypt', $value);
+
+        if ($decryptedValue == '1') {
+            return true;
+        }
+
+        if ($decryptedValue == '0') {
+            return false;
+        }
+
+        return $decryptedValue;
     }
 
     /**

@@ -134,6 +134,20 @@ class ConfigTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'key' => 'system.default.users.allow_email_change',
+                'name' => 'Users - Allow Email Change',
+                'description' => 'Allow users to change their email',
+                'value' => true,
+                'field' => [
+                    'name' => 'value',
+                    'label' => 'Allow',
+                    'type' => 'checkbox',
+                ],
+                'active' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ];
     }
 }

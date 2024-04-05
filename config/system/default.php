@@ -12,4 +12,7 @@ return [
     |
     */
     'load_config_from_database' => env('LOAD_CONFIG_FROM_DB', true),
+    'users' => [
+        'allow_email_change' => false,
+    ],
 ];
