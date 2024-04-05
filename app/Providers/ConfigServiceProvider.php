@@ -50,10 +50,10 @@ class ConfigServiceProvider extends ServiceProvider
                 // Decrypt value, as we're not using Eloquent ORM here
                 $d->value = stringEncryption('decrypt', $d->value);
                 if ($d->key === 'system.default.users.allow_email_change') {
-//                    ray([
-//                        $d->value,
-//                        is_null($d->value),
-//                    ]);
+                    //                    ray([
+                    //                        $d->value,
+                    //                        is_null($d->value),
+                    //                    ]);
                 }
                 config([$d->key => $d->value]);
                 if (! is_null($d->value)) {
