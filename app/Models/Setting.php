@@ -15,6 +15,9 @@ class Setting extends MS
 {
     use Cachable;
     use LogsActivity;
+    use \Illuminate\Database\Eloquent\Concerns\HasTimestamps, \App\Models\Traits\CustomTimestampsTrait {
+        \App\Models\Traits\CustomTimestampsTrait::freshTimestamp insteadof \Illuminate\Database\Eloquent\Concerns\HasTimestamps;
+    }
 
     protected $casts = [
         'value' => StringEncryption::class,

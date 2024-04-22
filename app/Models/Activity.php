@@ -10,6 +10,9 @@ use Spatie\Activitylog\Models\Activity as ac;
 class Activity extends ac
 {
     use CrudTrait;
+    use \Illuminate\Database\Eloquent\Concerns\HasTimestamps, \App\Models\Traits\CustomTimestampsTrait {
+        \App\Models\Traits\CustomTimestampsTrait::freshTimestamp insteadof \Illuminate\Database\Eloquent\Concerns\HasTimestamps;
+    }
 
     protected $casts = [
         'browser_detail' => 'collection',
