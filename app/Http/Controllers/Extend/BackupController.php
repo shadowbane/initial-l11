@@ -30,7 +30,7 @@ class BackupController extends BC
             foreach ($files as $file) {
                 // remove diskname from filename
                 $fileName = str_replace('backups/', '', $file);
-                $downloadLink = route('backup.download', ['file_name' => $fileName, 'disk' => $diskName]);
+                $downloadLink = $disk->temporaryUrl($file, Carbon::now()->addMinutes(30));
                 $deleteLink = route('backup.destroy', ['file_name' => $fileName, 'disk' => $diskName]);
 
                 // only take the zip files into account
@@ -39,15 +39,11 @@ class BackupController extends BC
                         'filePath' => $file,
                         'fileName' => $fileName,
                         'fileSize' => round((int) $disk->size($file) / 1048576, 2),
-                        'lastModified' => Carbon::createFromTimeStamp($disk->lastModified($file))->formatLocalized(
-                            '%d %B %Y, %H:%M'
-                        ),
+                        'lastModified' => Carbon::createFromTimestamp((int) $disk->lastModified($file))
+                            ->format('F j, Y H:i'),
+                        'timestamp' => $disk->lastModified($file),
                         'diskName' => $diskName,
-                        'downloadLink' => is_a(
-                            $disk->getAdapter(),
-                            LocalFilesystemAdapter::class,
-                            true
-                        ) ? $downloadLink : null,
+                        'downloadLink' => $downloadLink,
                         'deleteLink' => $deleteLink,
                     ];
                 }
@@ -55,7 +51,9 @@ class BackupController extends BC
         }
 
         // reverse the backups, so the newest one would be on top
-        $this->data['backups'] = array_reverse($this->data['backups']);
+        $this->data['backups'] = array_values(collect($this->data['backups'])->sortByDesc(function ($backup) {
+            return $backup->timestamp;
+        })->toArray());
         $this->data['title'] = trans('backpack::backup.backups');
 
         return view('backupmanager::backup', $this->data);

@@ -23,8 +23,10 @@ class MenuItem extends Model
     protected $connection = 'mysql';
     protected $table = 'menu_items';
     protected $fillable = ['name', 'grouping', 'type', 'link', 'page_id', 'parent_id', 'icon', 'admin_route'];
-    protected $casts = [];
-    protected $dates = ['created_at', 'updated_at'];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
     protected $hidden = ['created_at', 'updated_at'];
 
     public function getLogNameToUse(string $eventName = ''): string

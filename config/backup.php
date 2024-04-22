@@ -20,6 +20,7 @@ return [
                 'include' => [
                     config_path(),
                     base_path('.env'),
+                    storage_path('logs'),
                 ],
 
                 /*
@@ -147,7 +148,7 @@ return [
              * The disk names on which the backups will be stored.
              */
             'disks' => [
-                'local',
+                'backups',
             ],
         ],
 

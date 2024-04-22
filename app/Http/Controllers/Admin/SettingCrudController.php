@@ -54,14 +54,13 @@ class SettingCrudController extends SC
                 'label' => trans('backpack::settings.name'),
             ],
             [
-                'name' => 'description',
-                'label' => trans('backpack::settings.description'),
-                'limit' => 1000,
-            ],
-            [
                 'name' => 'value',
                 'label' => trans('backpack::settings.value'),
                 'type' => 'backpack_setting_values',
+            ],
+            [
+                'name' => 'description',
+                'label' => trans('backpack::settings.description'),
             ],
         ]);
 
