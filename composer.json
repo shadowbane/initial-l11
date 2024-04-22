@@ -66,6 +66,7 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
+            "bash .contrib/setup.sh",
             "@php artisan db:seed --class=IdeHelper"
         ],
         "post-update-cmd": [
