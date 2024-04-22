@@ -26,6 +26,13 @@ class MenuItemRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required|sometimes|string|max:100',
+            'grouping' => 'nullable|string',
+            'type' => 'nullable|string|max:20',
+            'link' => 'nullable|string|max:255',
+            'parent_id' => 'nullable|integer',
+            'icon' => 'nullable|string',
+            'admin_route' => 'nullable|boolean',
         ];
     }
 
