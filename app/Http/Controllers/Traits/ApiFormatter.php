@@ -108,7 +108,11 @@ trait ApiFormatter
     }
 
     /**
+     * Uncomment to enable auditing.
+     * You need to setup audit tables first.
+     *
      * @param  array  $response
+     *
      * @return void
      */
     public function storeAuditRequest(array $response): void
